@@ -1,0 +1,19 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres-json
+    environment:
+      POSTGRES_DB: testdb
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+    ports:
+      - "5432:5432"
+
+  mongo:
+    image: mongo:6.0
+    container_name: mongo-json
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin123
+    ports:
+      - "27017:27017"
